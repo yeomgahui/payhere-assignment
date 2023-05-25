@@ -1,10 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import InputBox from './components/InputBox';
+import TextField from '@mui/material/TextField';
 
 function App() {
   return (
     <div className="App">
+      <InputBox />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
