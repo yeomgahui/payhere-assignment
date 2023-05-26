@@ -3,13 +3,13 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import { ListItem } from '../types/ListItem.ts'; // ListItem 타입 가져오기
+import { Site } from '../types/Site.ts'; // ListItem 타입 가져오기
 
-interface InputBox {
-  onAddItem: (item: ListItem) => void;
+interface InputBoxProps {
+  onAddItem: (item: Site) => void;
 }
 
-const InputBox: React.FC<InputBox> = ({ onAddItem }) => {
+const InputBox: React.FC<InputBoxProps> = ({ onAddItem }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,9 +19,9 @@ const InputBox: React.FC<InputBox> = ({ onAddItem }) => {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (inputValue) {
-      const newItem: ListItem = {
+      const newItem: Site = {
         id: Date.now(),
-        text: inputValue,
+        url: inputValue,
       };
       onAddItem(newItem);
       setInputValue('');
