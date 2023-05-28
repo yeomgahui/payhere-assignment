@@ -18,10 +18,11 @@ const InputBox: React.FC<InputBoxProps> = ({ onAddItem }) => {
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (inputValue) {
+    const url = inputValue.trim();
+    if (url) {
       const newItem: Site = {
         id: Date.now(),
-        url: inputValue,
+        url,
       };
       onAddItem(newItem);
       setInputValue('');
