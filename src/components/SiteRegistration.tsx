@@ -3,8 +3,10 @@ import InputBox from './SiteInputBox.tsx';
 import SiteList from './SiteList.tsx';
 import { Site } from '../types/Site.ts';
 import { MAX_SITES } from '../assets/constants';
+import { useNavigate } from 'react-router-dom';
 
 const SiteRegistration = () => {
+  const navigate = useNavigate();
   const [siteList, setSiteList] = useState<Site[]>([]);
   const [error, setError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -40,8 +42,8 @@ const SiteRegistration = () => {
     setSiteList((prevSites) => prevSites.filter((site) => site.id !== id));
   };
 
-  const moveDetailPage = () => {
-    console.log('moveDetailPage');
+  const moveDetailPage = (id: number) => {
+    navigate(`/detail/${id}`);
   };
 
   return (
