@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import InputBox from './SiteInputBox.tsx';
-import SiteList from './SiteList.tsx';
-import { Site } from '../types/Site.ts';
-import { MAX_SITES } from '../assets/constants';
 import { useNavigate } from 'react-router-dom';
+import InputBox from '../components/SiteInputBox.tsx';
+import SiteList from '../components/SiteList.tsx';
+import { MAX_SITES } from '../assets/constants';
+import { Site } from '../types/Site.ts';
 
-const SiteRegistration = () => {
+const SiteRegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const [siteList, setSiteList] = useState<Site[]>([]);
   const [error, setError] = useState<boolean>(false);
@@ -43,7 +43,8 @@ const SiteRegistration = () => {
   };
 
   const moveDetailPage = (id: number) => {
-    navigate(`/detail/${id}`);
+    const targetUrl = siteList.find((site) => site.id === id)?.url;
+    navigate(`/detail/${id}`, { state: { url: `${targetUrl}` } });
   };
 
   return (
@@ -58,4 +59,4 @@ const SiteRegistration = () => {
   );
 };
 
-export default SiteRegistration;
+export default SiteRegisterPage;
