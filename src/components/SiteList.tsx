@@ -4,12 +4,14 @@ import ListItemButton from '@mui/material/ListItemButton';
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import FolderIcon from '@mui/icons-material/Folder';
+import StarIcon from '@mui/icons-material/Star';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { Site } from '../types/Site';
+import styled from 'styled-components';
 
+const StyledStarIcon = styled(StarIcon)`
+  color: #f7e600;
+`;
 interface SiteListProps {
   items: Site[];
   onDeleteItem: (id: number) => void;
@@ -38,11 +40,9 @@ const SiteList: React.FC<SiteListProps> = ({ items, onDeleteItem, onSelectItem }
         >
           <ListItemButton onClick={() => handleItemClick(item.id)}>
             <ListItemAvatar>
-              <Avatar>
-                <FolderIcon />
-              </Avatar>
+              <StyledStarIcon />
             </ListItemAvatar>
-            <ListItemText primary={item.url} secondary={'Secondary text'} />
+            <ListItemText primary={item.url} />
           </ListItemButton>
         </ListItem>
       ))}
