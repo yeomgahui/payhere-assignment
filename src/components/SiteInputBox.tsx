@@ -35,20 +35,21 @@ const InputBox: React.FC<InputBoxProps> = ({ onAddItem, error, errorMessage }) =
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
+        '& > :not(style)': { m: 2 },
       }}
       noValidate
       autoComplete="off"
       onSubmit={handleFormSubmit}
     >
       <TextField
-        id="outlined-basic"
         label="URL"
         variant="outlined"
         value={inputValue}
         onChange={handleInputChange}
         error={error}
         helperText={errorMessage}
+        sx={{ width: '35ch' }}
+        size="small"
       />
       <Button variant="contained" size="large" startIcon={<AddIcon />} type="submit">
         ADD
