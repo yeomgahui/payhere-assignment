@@ -26,7 +26,7 @@ const SiteRegisterPage: React.FC = () => {
     }
   }, [siteList, errorMessage]);
 
-  const onAddSite = (item: Site) => {
+  const handleAddSite = (item: Site) => {
     if (siteList.length >= MAX_SITES) {
       const message = `최대 ${MAX_SITES}까지 등록하실 수 있습니다.`;
       setErrorMessage(message);
@@ -35,22 +35,22 @@ const SiteRegisterPage: React.FC = () => {
     setSiteList((prevSites) => [...prevSites, item]);
   };
 
-  const handleDeleteItem = (id: number) => {
+  const handleDeleteSite = (id: number) => {
     setSiteList((prevSites) => prevSites.filter((site) => site.id !== id));
   };
 
-  const moveDetailPage = (id: number) => {
+  const handleSelectSite = (id: number) => {
     const targetUrl = siteList.find((site) => site.id === id)?.url;
     navigate(`/detail/${id}`, { state: { url: `${targetUrl}` } });
   };
 
   return (
     <>
-      <InputBox onAddItem={onAddSite} errorMessage={errorMessage} />
+      <InputBox onAddSite={handleAddSite} errorMessage={errorMessage} />
       <SiteList
         items={siteList}
-        onDeleteItem={handleDeleteItem}
-        onSelectItem={moveDetailPage}
+        onDeleteSite={handleDeleteSite}
+        onSelectSite={handleSelectSite}
       ></SiteList>
     </>
   );

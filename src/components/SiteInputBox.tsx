@@ -6,11 +6,11 @@ import AddIcon from '@mui/icons-material/Add';
 import { Site } from '../types'; // ListItem 타입 가져오기
 
 interface InputBoxProps {
-  onAddItem: (item: Site) => void;
+  onAddSite: (item: Site) => void;
   errorMessage: string;
 }
 
-const InputBox: React.FC<InputBoxProps> = ({ onAddItem, errorMessage }) => {
+const InputBox: React.FC<InputBoxProps> = ({ onAddSite, errorMessage }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,11 +21,11 @@ const InputBox: React.FC<InputBoxProps> = ({ onAddItem, errorMessage }) => {
     event.preventDefault();
     const url = inputValue.trim();
     if (url) {
-      const newItem: Site = {
+      const newSite: Site = {
         id: Date.now(),
         url,
       };
-      onAddItem(newItem);
+      onAddSite(newSite);
       setInputValue('');
     }
   };

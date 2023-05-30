@@ -14,17 +14,17 @@ const StyledStarIcon = styled(StarIcon)`
 `;
 interface SiteListProps {
   items: Site[];
-  onDeleteItem: (id: number) => void;
-  onSelectItem: (id: number) => void;
+  onDeleteSite: (id: number) => void;
+  onSelectSite: (id: number) => void;
 }
 
-const SiteList: React.FC<SiteListProps> = ({ items, onDeleteItem, onSelectItem }) => {
+const SiteList: React.FC<SiteListProps> = ({ items, onDeleteSite, onSelectSite }) => {
   const handleDeleteClick = (id: number) => {
-    onDeleteItem(id);
+    onDeleteSite(id);
   };
 
   const handleItemClick = (id: number) => {
-    onSelectItem(id);
+    onSelectSite(id);
   };
 
   return (

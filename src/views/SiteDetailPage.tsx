@@ -63,7 +63,7 @@ const SiteDetailPage: React.FC = () => {
     fetchURLs();
   }, []);
 
-  const handleUrlClick = (url: string) => {
+  const handleSelectItem = (url: string) => {
     window.open(url, '_blank');
   };
 
@@ -72,7 +72,7 @@ const SiteDetailPage: React.FC = () => {
       {urlList.length > 0 ? (
         <>
           <Message>{location.state.url}의 최근 10년치 과거 URL 주소입니다.</Message>
-          <SiteDetailList items={urlList} onSelectItem={handleUrlClick} />
+          <SiteDetailList items={urlList} onSelectItem={handleSelectItem} />
         </>
       ) : (
         <Message>{location.state.url}에 대한 과거 URL 이력이 존재하지 않습니다.</Message>
