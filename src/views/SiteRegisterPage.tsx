@@ -8,7 +8,6 @@ import { Site } from '../types';
 const SiteRegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const [siteList, setSiteList] = useState<Site[]>([]);
-  const [error, setError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
@@ -22,16 +21,14 @@ const SiteRegisterPage: React.FC = () => {
     if (siteList.length === 0) return;
     localStorage.setItem('siteList', JSON.stringify(siteList));
 
-    if (error && siteList.length < MAX_SITES) {
-      setError(false);
+    if (!!errorMessage && siteList.length < MAX_SITES) {
       setErrorMessage('');
     }
-  }, [siteList, error]);
+  }, [siteList, errorMessage]);
 
   const onAddSite = (item: Site) => {
     if (siteList.length >= MAX_SITES) {
       const message = `최대 ${MAX_SITES}까지 등록하실 수 있습니다.`;
-      setError(true);
       setErrorMessage(message);
       return;
     }
@@ -49,7 +46,7 @@ const SiteRegisterPage: React.FC = () => {
 
   return (
     <>
-      <InputBox onAddItem={onAddSite} error={error} errorMessage={errorMessage} />
+      <InputBox onAddItem={onAddSite} errorMessage={errorMessage} />
       <SiteList
         items={siteList}
         onDeleteItem={handleDeleteItem}

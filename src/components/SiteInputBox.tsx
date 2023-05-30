@@ -7,11 +7,10 @@ import { Site } from '../types'; // ListItem 타입 가져오기
 
 interface InputBoxProps {
   onAddItem: (item: Site) => void;
-  error: boolean;
   errorMessage: string;
 }
 
-const InputBox: React.FC<InputBoxProps> = ({ onAddItem, error, errorMessage }) => {
+const InputBox: React.FC<InputBoxProps> = ({ onAddItem, errorMessage }) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +45,7 @@ const InputBox: React.FC<InputBoxProps> = ({ onAddItem, error, errorMessage }) =
         variant="outlined"
         value={inputValue}
         onChange={handleInputChange}
-        error={error}
+        error={!!errorMessage}
         helperText={errorMessage}
         sx={{ width: '35ch' }}
         size="small"
