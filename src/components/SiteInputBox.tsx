@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import { Site } from '../types/Site.ts'; // ListItem 타입 가져오기
+import { Site } from '../types'; // ListItem 타입 가져오기
 
 interface InputBoxProps {
   onAddItem: (item: Site) => void;

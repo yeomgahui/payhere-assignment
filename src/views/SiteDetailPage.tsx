@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SiteDetailList from '../components/SiteDetailList';
-import {
-  getFormattedDate,
-  getYear,
-  convertStringToFormattedDate,
-} from '../assets/utils/date-utils';
+import { getFormattedDate, getYear, convertStringToFormattedDate } from '../assets/utils';
 import { MAX_YEAR_AGO } from '../assets/constants';
-import { SiteDetailItem } from '../types/Site';
+import { SiteDetailItem } from '../types';
 import styled from 'styled-components';
 
 const Message = styled.h3`

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import InputBox from '../components/SiteInputBox.tsx';
 import SiteList from '../components/SiteList.tsx';
 import { MAX_SITES } from '../assets/constants';
-import { Site } from '../types/Site.ts';
+import { Site } from '../types';
 
 const SiteRegisterPage: React.FC = () => {
   const navigate = useNavigate();

@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import StarIcon from '@mui/icons-material/Star';
 import ListItemText from '@mui/material/ListItemText';
-import { Site } from '../types/Site';
+import { Site } from '../types';
 import styled from 'styled-components';
 
 const StyledStarIcon = styled(StarIcon)`

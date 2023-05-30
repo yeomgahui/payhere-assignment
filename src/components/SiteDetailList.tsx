@@ -5,7 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import WebIcon from '@mui/icons-material/Web';
-import { SiteDetailItem } from '../types/Site';
+import { SiteDetailItem } from '../types';
 import styled from 'styled-components';
 
 const StyledListItemText = styled(ListItemText)`
