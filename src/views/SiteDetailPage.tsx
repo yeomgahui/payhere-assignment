@@ -5,6 +5,7 @@ import { getFormattedDate, getYear, convertStringToFormattedDate } from '../asse
 import { MAX_YEAR_AGO } from '../assets/constants';
 import { SiteDetailItem } from '../types';
 import styled from 'styled-components';
+import { fetchSnapshot } from '../api';
 
 const Message = styled.h3`
   text-align: center;
@@ -19,11 +20,7 @@ const getSiteInfosForDateRange = async (
 
   while (fromDate <= toDate) {
     const formattedDate = getFormattedDate(fromDate, 'YYYY0101');
-    const response = await fetch(
-      `https://archive.org/wayback/available?url=${url}&timestamp=${formattedDate}`,
-    );
-    const { archived_snapshots } = await response.json();
-    const urlHistoryInfo = archived_snapshots?.closest;
+    const urlHistoryInfo = await fetchSnapshot({ url, timestamp: formattedDate });
     const isAlreadyExist = urls.some(
       (url) => urlHistoryInfo && url.timestamp === urlHistoryInfo.timestamp,
     );
