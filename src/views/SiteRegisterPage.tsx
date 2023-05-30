@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InputBox from '../components/SiteInputBox.tsx';
+import SiteInputBox from '../components/SiteInputBox.tsx';
 import SiteList from '../components/SiteList.tsx';
 import { MAX_SITES } from '../assets/constants';
 import { Site } from '../types';
@@ -46,7 +46,7 @@ const SiteRegisterPage: React.FC = () => {
 
   return (
     <>
-      <InputBox onAddSite={handleAddSite} errorMessage={errorMessage} />
+      <SiteInputBox onAddSite={handleAddSite} errorMessage={errorMessage} />
       <SiteList
         items={siteList}
         onDeleteSite={handleDeleteSite}
