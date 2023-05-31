@@ -6,7 +6,7 @@ import SiteDetailPage from './views/SiteDetailPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Container maxWidth="sm">
         <Header />
         <Routes>
