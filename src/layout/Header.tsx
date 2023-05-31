@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Link to="/" style={{ textDecoration: 'none', color: '#fff' }}>
-            Site History Founder - PAYHEAR
+            Site History Finder - PAYHERE
           </Link>
         </Typography>
       </Toolbar>
