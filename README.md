@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# SITE HISTORY FINDER 🔍
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+**<h3 align="center">A Simple Site History Finder 🗂️</h3>**
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="middle" >
+  <img src="./siteFounder_demo.gif" width="400">
+</p>
 
-### `npm test`
+# ⚙️ SKILL
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**😎 아래 SKILLSET을 이용했어요**
 
-### `npm run build`
+- Creat React App
+- TypeScript
+- Webpack 
+- MUI Library + Styled Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ❗ Requirement
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js 18.x 이상
+- NPM 패키지 매니저
 
-### `npm run eject`
+# 🙌 Get Start!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**1. 저장소를 클론 합니다.**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```shell
+$ git clone https://github.com/yeomgahui/payhere-assignment.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**2. 프로젝트 디렉토리로 이동합니다.**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell
+$ cd payhear-assignment
+```
 
-## Learn More
+**3. 필요한 패키지를 설치합니다.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+$ npm i 
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**4. 개발 서버를 실행합니다.**
+
+```shell
+$ npm run start
+```
+
+# 📬 Folder Directory
+```bash
+├── public/ # 정적 파일 (HTML 등)
+├── src/ # 소스 코드
+│ ├── api/ # API 관련 파일
+│ ├── assets/ # 공통함수/상수 정의 파일
+│ ├── components/ # 컴포넌트들
+│ ├── layout/ # 레이아웃 컴포넌트들
+│ ├── types/ # 타입 정의 파일
+│ ├── views/ # 페이지 컴포넌트들
+│ ├── App.tsx # 메인 애플리케이션 컴포넌트
+│ ├── index.tsx # 애플리케이션 진입점
+│ └── ... # 그 외 파일들
+├── .gitignore # Git 무시 파일 목록
+├── package.json # 프로젝트 설정 및 종속성
+├── tsconfig.json # TypeScript 설정 파일
+├── README.md # 프로젝트 설명 및 사용 방법
+└── ... # 그외 파일들
+```
+
+---
+
+## related
+
+[** PAYHERE 과제 **](https://payhere.notion.site/2023-a56127648aa74e8abf3b7628ef447fef)
+
+## 아쉬운 부분
+
+- 테스트 코드 작성을 하지 못했어요. 
+- Styled Component를 잘 활용하지 못했어요.
+
+## Todo
+
+- [] 테스트 코드 작성
+- [] Loading Spinner 구현
