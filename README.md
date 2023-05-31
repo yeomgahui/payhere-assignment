@@ -11,9 +11,8 @@
 </p>
 
 
-<div style="text-align: center;">
+<div align="middle">
   <a href="https://yeomgahui.github.io/payhere-assignment/">DEMO LINK</a>
-
 </div>
 
 
